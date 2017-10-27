@@ -11,3 +11,8 @@ Roadmap
 * git object style and storing, [here](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)
 * git ref tutorial is [here](https://git-scm.com/book/en/v2/Git-Internals-Git-References), there is also another type of object, tag object
 * git [packfile](https://git-scm.com/book/en/v2/Git-Internals-Packfiles) used for saving disk space and save the requests when transfer through network with smart protocol
+
+* the limit of tikv's value size is 8 mb as a developer says. and the suggest value size of cassandra is less than 1 mb
+	* according to the interface of jgit provided, choosen minio for storing
+
+* [here](http://alblue.bandlem.com/2013/11/embedding-jgit.html) is a five-level jgit tutorial

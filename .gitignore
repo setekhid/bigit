@@ -8,4 +8,8 @@
 # intellij
 /.idea/
 /*.iml
+/http/*.iml
+/minio/*.iml
 /target/
+/http/target/
+/minio/target/
