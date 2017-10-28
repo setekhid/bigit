@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+    bigit:
+        build:
+            context: ./http
+            dockerfile: ./Dockerfile.devel
+        restart: always
+        ports:
+            - 8080:8080
+        volumes:
+            - ./git-data:/var/srv/git

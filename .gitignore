@@ -13,3 +13,6 @@
 /target/
 /http/target/
 /minio/target/
+
+# devel data
+/git-data

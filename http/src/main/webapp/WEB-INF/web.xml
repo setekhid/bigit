@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<web-app>
+
+    <servlet>
+        <servlet-name>PingServlet</servlet-name>
+        <servlet-class>xyz.func.setekhid.bigit.http.server.PingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PingServlet</servlet-name>
+        <url-pattern>/api/ping</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BigitServlet</servlet-name>
+        <servlet-class>xyz.func.setekhid.bigit.http.server.BigitServlet</servlet-class>
+        <init-param>
+            <param-name>resolver-class</param-name>
+            <param-value>xyz.func.setekhid.bigit.http.server.SimpleFileResolver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>base-path</param-name>
+            <param-value>/var/srv/git</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BigitServlet</servlet-name>
+        <url-pattern>/git/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
