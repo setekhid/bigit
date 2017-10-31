@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <web-app>
 
+    <!-- ping test -->
     <servlet>
         <servlet-name>PingServlet</servlet-name>
         <servlet-class>xyz.func.setekhid.bigit.http.server.PingServlet</servlet-class>
@@ -10,12 +11,27 @@
         <url-pattern>/api/ping</url-pattern>
     </servlet-mapping>
 
+    <!-- repository management -->
+    <servlet>
+        <servlet-name>ManagerServlet</servlet-name>
+        <servlet-class>xyz.func.setekhid.bigit.http.server.ManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerServlet</servlet-name>
+        <url-pattern>/api/repositories/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagerServlet</servlet-name>
+        <url-pattern>/api/repositories</url-pattern>
+    </servlet-mapping>
+
+    <!-- git operation -->
     <servlet>
         <servlet-name>BigitServlet</servlet-name>
         <servlet-class>xyz.func.setekhid.bigit.http.server.BigitServlet</servlet-class>
         <init-param>
             <param-name>resolver-class</param-name>
-            <param-value>xyz.func.setekhid.bigit.http.server.SimpleFileResolver</param-value>
+            <param-value>xyz.func.setekhid.bigit.http.server.backend.SimpleFileResolver</param-value>
         </init-param>
         <init-param>
             <param-name>base-path</param-name>

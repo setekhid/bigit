@@ -1,4 +1,4 @@
-package xyz.func.setekhid.bigit.http.server
+package xyz.func.setekhid.bigit.http.server.backend
 
 import java.io.File
 import java.text.MessageFormat
@@ -9,13 +9,13 @@ import org.eclipse.jgit.http.server.HttpServerText
 import org.eclipse.jgit.transport.resolver.FileResolver
 
 
-class SimpleFileResolver(params: ResolverParameters) extends FileResolver[HttpServletRequest](SimpleFileResolver.getFile(params), true) {
+class SimpleFileResolver(params: Params) extends FileResolver[HttpServletRequest](SimpleFileResolver.getFile(params), true) {
 
 }
 
 object SimpleFileResolver {
 
-  def getFile(params: ResolverParameters): File = {
+  def getFile(params: Params): File = {
 
     val fileName = params.get("base-path")
     if (fileName == null || "".equals(fileName))
